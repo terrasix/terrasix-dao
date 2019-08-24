@@ -1,0 +1,42 @@
+{
+  "name": "TerraSix",
+  "version": "0.1.0",
+  "description": "A collective intelligence to repopulate the Earth with 6 trillion trees.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "truffle compile --all",
+    "lint:js": "find ./test -name \"*.js\" | xargs eslint",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:sol:solium": "solium --dir contracts/",
+    "lint:sol:solium:fix": "npm run lint:sol:solium -- --fix",
+    "test": "npm run test:contracts",
+    "test:contracts": "truffle test",
+    "ganache-cli": "./tools/run_ganache_cli.sh",
+    "make:all": "lint:sol:solium && lint:js && compile:all && test:contracts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terrasix/terrasix-dao.git"
+  },
+  "author": "Benjamin Bollen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/terrasix/terrasix-dao/issues"
+  },
+  "homepage": "https://github.com/terrasix/terrasix-dao#readme",
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "bn.js": "^5.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "ethlint": "^1.2.4",
+    "ganache-cli": "^6.4.4",
+    "mocha": "^6.2.0",
+    "openzeppelin-solidity": "^2.1.1",
+    "solium": "^1.2.4",
+    "truffle": "^5.0.0-beta.2",
+    "web3": "^1.0.0-beta.55"
+  }
+}
