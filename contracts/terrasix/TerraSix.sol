@@ -55,7 +55,7 @@ contract TerraSix is IT6, Untree {
     /* Special functions */
 
     /** fallback function accepts ETH as collateral for
-     *  repayments of externalities.
+     *  repayments of externalities - as a donation
      */
     function()
         external
@@ -63,6 +63,9 @@ contract TerraSix is IT6, Untree {
     {
         require(msg.data.length == 0,
             "No data can be passed.");
+        // it's a donation, just transfer it onwards
+        // to the reforestationDAO
+        reforestationDAO.send(msg.value);
     }
 
     constructor(
@@ -110,4 +113,6 @@ contract TerraSix is IT6, Untree {
             treeBalances[address(this)] = (treeBalances[msg.sender].add(trees)).sub(untrees);
         }
     }
+
+    function 
 }
