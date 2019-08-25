@@ -38,5 +38,8 @@
     "solium": "^1.2.4",
     "truffle": "^5.0.0-beta.2",
     "web3": "^1.0.0-beta.55"
+  },
+  "dependencies": {
+    "truffle-flattener": "^1.4.0"
   }
 }

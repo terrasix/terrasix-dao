@@ -238,14 +238,14 @@
     "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/untree/unTree.sol",
     "exportedSymbols": {
       "Untree": [
-        927
+        969
       ]
     },
-    "id": 928,
+    "id": 970,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 891,
+        "id": 933,
         "literals": [
           "solidity",
           ">=",
@@ -261,10 +261,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 892,
+        "id": 934,
         "nodeType": "ImportDirective",
-        "scope": 928,
-        "sourceUnit": 1061,
+        "scope": 970,
+        "sourceUnit": 1103,
         "src": "33:59:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -272,10 +272,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
-        "id": 893,
+        "id": 935,
         "nodeType": "ImportDirective",
-        "scope": 928,
-        "sourceUnit": 1458,
+        "scope": 970,
+        "sourceUnit": 1500,
         "src": "93:63:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -283,9 +283,9 @@
       {
         "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/terrasix/IT6.sol",
         "file": "../terrasix/IT6.sol",
-        "id": 894,
+        "id": 936,
         "nodeType": "ImportDirective",
-        "scope": 928,
+        "scope": 970,
         "sourceUnit": 526,
         "src": "158:29:7",
         "symbolAliases": [],
@@ -297,64 +297,64 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 895,
+              "id": 937,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1457,
+              "referencedDeclaration": 1499,
               "src": "208:5:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1457",
+                "typeIdentifier": "t_contract$_ERC20_$1499",
                 "typeString": "contract ERC20"
               }
             },
-            "id": 896,
+            "id": 938,
             "nodeType": "InheritanceSpecifier",
             "src": "208:5:7"
           }
         ],
         "contractDependencies": [
-          1457,
-          1526
+          1499,
+          1568
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 927,
+        "id": 969,
         "linearizedBaseContracts": [
-          927,
-          1457,
-          1526
+          969,
+          1499,
+          1568
         ],
         "name": "Untree",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 899,
+              "id": 941,
               "nodeType": "Block",
               "src": "309:7:7",
               "statements": []
             },
             "documentation": null,
-            "id": 900,
+            "id": 942,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 897,
+              "id": 939,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "282:7:7"
             },
             "returnParameters": {
-              "id": 898,
+              "id": 940,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "309:0:7"
             },
-            "scope": 927,
+            "scope": 969,
             "src": "271:45:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -362,7 +362,7 @@
           },
           {
             "body": {
-              "id": 912,
+              "id": 954,
               "nodeType": "Block",
               "src": "480:41:7",
               "statements": [
@@ -372,11 +372,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 908,
+                        "id": 950,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 902,
+                        "referencedDeclaration": 944,
                         "src": "496:8:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -385,11 +385,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 909,
+                        "id": 951,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 904,
+                        "referencedDeclaration": 946,
                         "src": "506:7:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -408,18 +408,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 907,
+                      "id": 949,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1343,
+                      "referencedDeclaration": 1385,
                       "src": "490:5:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 910,
+                    "id": 952,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -433,29 +433,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 911,
+                  "id": 953,
                   "nodeType": "ExpressionStatement",
                   "src": "490:24:7"
                 }
               ]
             },
             "documentation": "Issue unTrees as debt for future trees ",
-            "id": 913,
+            "id": 955,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "issueUntrees",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 905,
+              "id": 947,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 902,
+                  "id": 944,
                   "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 913,
+                  "scope": 955,
                   "src": "424:16:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -464,7 +464,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 901,
+                    "id": 943,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "424:7:7",
@@ -479,10 +479,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 904,
+                  "id": 946,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 913,
+                  "scope": 955,
                   "src": "442:15:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -491,7 +491,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 903,
+                    "id": 945,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "442:7:7",
@@ -507,12 +507,12 @@
               "src": "423:35:7"
             },
             "returnParameters": {
-              "id": 906,
+              "id": 948,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "480:0:7"
             },
-            "scope": 927,
+            "scope": 969,
             "src": "402:119:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -520,7 +520,7 @@
           },
           {
             "body": {
-              "id": 925,
+              "id": 967,
               "nodeType": "Block",
               "src": "603:41:7",
               "statements": [
@@ -530,11 +530,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 921,
+                        "id": 963,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 915,
+                        "referencedDeclaration": 957,
                         "src": "619:8:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -543,11 +543,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 922,
+                        "id": 964,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 917,
+                        "referencedDeclaration": 959,
                         "src": "629:7:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -566,18 +566,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 920,
+                      "id": 962,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1386,
+                      "referencedDeclaration": 1428,
                       "src": "613:5:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 923,
+                    "id": 965,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -591,29 +591,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 924,
+                  "id": 966,
                   "nodeType": "ExpressionStatement",
                   "src": "613:24:7"
                 }
               ]
             },
             "documentation": null,
-            "id": 926,
+            "id": 968,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "burnUntree",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 918,
+              "id": 960,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 915,
+                  "id": 957,
                   "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 926,
+                  "scope": 968,
                   "src": "547:16:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -622,7 +622,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 914,
+                    "id": 956,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "547:7:7",
@@ -637,10 +637,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 917,
+                  "id": 959,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 926,
+                  "scope": 968,
                   "src": "565:15:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -649,7 +649,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 916,
+                    "id": 958,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "565:7:7",
@@ -665,19 +665,19 @@
               "src": "546:35:7"
             },
             "returnParameters": {
-              "id": 919,
+              "id": 961,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "603:0:7"
             },
-            "scope": 927,
+            "scope": 969,
             "src": "527:117:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 928,
+        "scope": 970,
         "src": "189:457:7"
       }
     ],
@@ -687,14 +687,14 @@
     "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/untree/unTree.sol",
     "exportedSymbols": {
       "Untree": [
-        927
+        969
       ]
     },
-    "id": 928,
+    "id": 970,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 891,
+        "id": 933,
         "literals": [
           "solidity",
           ">=",
@@ -710,10 +710,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 892,
+        "id": 934,
         "nodeType": "ImportDirective",
-        "scope": 928,
-        "sourceUnit": 1061,
+        "scope": 970,
+        "sourceUnit": 1103,
         "src": "33:59:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -721,10 +721,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
-        "id": 893,
+        "id": 935,
         "nodeType": "ImportDirective",
-        "scope": 928,
-        "sourceUnit": 1458,
+        "scope": 970,
+        "sourceUnit": 1500,
         "src": "93:63:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -732,9 +732,9 @@
       {
         "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/terrasix/IT6.sol",
         "file": "../terrasix/IT6.sol",
-        "id": 894,
+        "id": 936,
         "nodeType": "ImportDirective",
-        "scope": 928,
+        "scope": 970,
         "sourceUnit": 526,
         "src": "158:29:7",
         "symbolAliases": [],
@@ -746,64 +746,64 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 895,
+              "id": 937,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1457,
+              "referencedDeclaration": 1499,
               "src": "208:5:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1457",
+                "typeIdentifier": "t_contract$_ERC20_$1499",
                 "typeString": "contract ERC20"
               }
             },
-            "id": 896,
+            "id": 938,
             "nodeType": "InheritanceSpecifier",
             "src": "208:5:7"
           }
         ],
         "contractDependencies": [
-          1457,
-          1526
+          1499,
+          1568
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 927,
+        "id": 969,
         "linearizedBaseContracts": [
-          927,
-          1457,
-          1526
+          969,
+          1499,
+          1568
         ],
         "name": "Untree",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 899,
+              "id": 941,
               "nodeType": "Block",
               "src": "309:7:7",
               "statements": []
             },
             "documentation": null,
-            "id": 900,
+            "id": 942,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 897,
+              "id": 939,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "282:7:7"
             },
             "returnParameters": {
-              "id": 898,
+              "id": 940,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "309:0:7"
             },
-            "scope": 927,
+            "scope": 969,
             "src": "271:45:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -811,7 +811,7 @@
           },
           {
             "body": {
-              "id": 912,
+              "id": 954,
               "nodeType": "Block",
               "src": "480:41:7",
               "statements": [
@@ -821,11 +821,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 908,
+                        "id": 950,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 902,
+                        "referencedDeclaration": 944,
                         "src": "496:8:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -834,11 +834,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 909,
+                        "id": 951,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 904,
+                        "referencedDeclaration": 946,
                         "src": "506:7:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -857,18 +857,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 907,
+                      "id": 949,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1343,
+                      "referencedDeclaration": 1385,
                       "src": "490:5:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 910,
+                    "id": 952,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -882,29 +882,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 911,
+                  "id": 953,
                   "nodeType": "ExpressionStatement",
                   "src": "490:24:7"
                 }
               ]
             },
             "documentation": "Issue unTrees as debt for future trees ",
-            "id": 913,
+            "id": 955,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "issueUntrees",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 905,
+              "id": 947,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 902,
+                  "id": 944,
                   "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 913,
+                  "scope": 955,
                   "src": "424:16:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -913,7 +913,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 901,
+                    "id": 943,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "424:7:7",
@@ -928,10 +928,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 904,
+                  "id": 946,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 913,
+                  "scope": 955,
                   "src": "442:15:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -940,7 +940,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 903,
+                    "id": 945,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "442:7:7",
@@ -956,12 +956,12 @@
               "src": "423:35:7"
             },
             "returnParameters": {
-              "id": 906,
+              "id": 948,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "480:0:7"
             },
-            "scope": 927,
+            "scope": 969,
             "src": "402:119:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -969,7 +969,7 @@
           },
           {
             "body": {
-              "id": 925,
+              "id": 967,
               "nodeType": "Block",
               "src": "603:41:7",
               "statements": [
@@ -979,11 +979,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 921,
+                        "id": 963,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 915,
+                        "referencedDeclaration": 957,
                         "src": "619:8:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -992,11 +992,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 922,
+                        "id": 964,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 917,
+                        "referencedDeclaration": 959,
                         "src": "629:7:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1015,18 +1015,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 920,
+                      "id": 962,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1386,
+                      "referencedDeclaration": 1428,
                       "src": "613:5:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 923,
+                    "id": 965,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1040,29 +1040,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 924,
+                  "id": 966,
                   "nodeType": "ExpressionStatement",
                   "src": "613:24:7"
                 }
               ]
             },
             "documentation": null,
-            "id": 926,
+            "id": 968,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "burnUntree",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 918,
+              "id": 960,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 915,
+                  "id": 957,
                   "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 926,
+                  "scope": 968,
                   "src": "547:16:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1071,7 +1071,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 914,
+                    "id": 956,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "547:7:7",
@@ -1086,10 +1086,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 917,
+                  "id": 959,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 926,
+                  "scope": 968,
                   "src": "565:15:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1098,7 +1098,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 916,
+                    "id": 958,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "565:7:7",
@@ -1114,19 +1114,19 @@
               "src": "546:35:7"
             },
             "returnParameters": {
-              "id": 919,
+              "id": 961,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "603:0:7"
             },
-            "scope": 927,
+            "scope": 969,
             "src": "527:117:7",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 928,
+        "scope": 970,
         "src": "189:457:7"
       }
     ],
@@ -1138,7 +1138,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.13",
-  "updatedAt": "2019-08-25T03:30:30.335Z",
+  "updatedAt": "2019-08-25T04:04:51.014Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {

@@ -47,7 +47,7 @@ contract TerraSix is IT6, Untree {
      * reforestation, preservation and monitoring of forests
      * all over the world.
      */
-    address payable public reforestationDAO;
+    address payable public constant reforestationDAO = 0x08Ff27EDD8CC750d2EE8A44105B3CE6dB2963a5c;
 
     /** Tree balances, non-transferable */
     mapping(address => uint256) public treeBalances;
@@ -61,6 +61,13 @@ contract TerraSix is IT6, Untree {
     /** Total hero status */
     uint256 public totalHeroStatus;
 
+    modifier uniswapSet()
+    {
+        require(address(uniswap) != address(0),
+            "Uniswap contract must be set.");
+        _;
+    }
+
     /* Special functions */
 
     /** fallback function accepts ETH as collateral for
@@ -69,6 +76,7 @@ contract TerraSix is IT6, Untree {
     function()
         external
         payable
+        uniswapSet
     {
         require(msg.data.length == 0,
             "No data can be passed.");
@@ -78,14 +86,26 @@ contract TerraSix is IT6, Untree {
     }
 
     constructor(
-        address payable _reforestationDAO,
-        IUniswap _uniswap,
-        address _untreeExchange
+        // address payable _reforestationDAO,
+        // IUniswap _uniswap,
+        // address _untreeExchange
     )
         public
     {
         // TODO: write requirements, addresses not null.
-        reforestationDAO = _reforestationDAO;
+        // reforestationDAO = address('0x08Ff27EDD8CC750d2EE8A44105B3CE6dB2963a5c'); //_reforestationDAO;
+        // uniswap = _uniswap;
+        // untreeExchange = _untreeExchange;
+    }
+
+    // shortcut to simplify demo deployment
+    function setUniswap(IUniswap _uniswap, address _untreeExchange)
+        external
+    {
+        require(address(_uniswap) != address(0),
+            "Uniswap must not be null.");
+        require(address(_untreeExchange) != address(0),
+            "untreeExchange must not be null.");
         uniswap = _uniswap;
         untreeExchange = _untreeExchange;
     }
@@ -93,6 +113,7 @@ contract TerraSix is IT6, Untree {
     function plant()
         external
         payable
+        uniswapSet
     {
         uint256 price;
         if (totalTreesPlanted < BOOTSTRAP_THRESHOLD) {
@@ -126,11 +147,10 @@ contract TerraSix is IT6, Untree {
         reforestationDAO.transfer(msg.value);
     }
 
-    function accountForExternalities
-    (
-    )
+    function accountForExternalities()
         external
         payable
+        uniswapSet
     {
         uint256 price;
         if (totalTreesPlanted < BOOTSTRAP_THRESHOLD) {

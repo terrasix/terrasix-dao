@@ -32,14 +32,14 @@
     "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/uniswap/IUniswap.sol",
     "exportedSymbols": {
       "IUniswap": [
-        851
+        893
       ]
     },
-    "id": 852,
+    "id": 894,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 843,
+        "id": 885,
         "literals": [
           "solidity",
           ">=",
@@ -58,9 +58,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 851,
+        "id": 893,
         "linearizedBaseContracts": [
-          851
+          893
         ],
         "name": "IUniswap",
         "nodeType": "ContractDefinition",
@@ -68,22 +68,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 850,
+            "id": 892,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getPrice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 846,
+              "id": 888,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 845,
+                  "id": 887,
                   "name": "_exchange",
                   "nodeType": "VariableDeclaration",
-                  "scope": 850,
+                  "scope": 892,
                   "src": "183:17:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -92,7 +92,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 844,
+                    "id": 886,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "183:7:5",
@@ -109,15 +109,15 @@
               "src": "182:19:5"
             },
             "returnParameters": {
-              "id": 849,
+              "id": 891,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 848,
+                  "id": 890,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 850,
+                  "scope": 892,
                   "src": "225:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -126,7 +126,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 847,
+                    "id": 889,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "225:7:5",
@@ -141,14 +141,14 @@
               ],
               "src": "224:9:5"
             },
-            "scope": 851,
+            "scope": 893,
             "src": "165:69:5",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 852,
+        "scope": 894,
         "src": "33:203:5"
       }
     ],
@@ -158,14 +158,14 @@
     "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/uniswap/IUniswap.sol",
     "exportedSymbols": {
       "IUniswap": [
-        851
+        893
       ]
     },
-    "id": 852,
+    "id": 894,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 843,
+        "id": 885,
         "literals": [
           "solidity",
           ">=",
@@ -184,9 +184,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 851,
+        "id": 893,
         "linearizedBaseContracts": [
-          851
+          893
         ],
         "name": "IUniswap",
         "nodeType": "ContractDefinition",
@@ -194,22 +194,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 850,
+            "id": 892,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getPrice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 846,
+              "id": 888,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 845,
+                  "id": 887,
                   "name": "_exchange",
                   "nodeType": "VariableDeclaration",
-                  "scope": 850,
+                  "scope": 892,
                   "src": "183:17:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -218,7 +218,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 844,
+                    "id": 886,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "183:7:5",
@@ -235,15 +235,15 @@
               "src": "182:19:5"
             },
             "returnParameters": {
-              "id": 849,
+              "id": 891,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 848,
+                  "id": 890,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 850,
+                  "scope": 892,
                   "src": "225:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -252,7 +252,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 847,
+                    "id": 889,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "225:7:5",
@@ -267,14 +267,14 @@
               ],
               "src": "224:9:5"
             },
-            "scope": 851,
+            "scope": 893,
             "src": "165:69:5",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 852,
+        "scope": 894,
         "src": "33:203:5"
       }
     ],
@@ -286,7 +286,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.13",
-  "updatedAt": "2019-08-25T03:30:30.334Z",
+  "updatedAt": "2019-08-25T04:04:51.012Z",
   "devdoc": {
     "methods": {}
   },
