@@ -1,5 +1,8 @@
 pragma solidity >=0.5.0 <0.6.0;
 
+// Voor jou, en voor je toekomst, mijn liefste Siri
+// een gelukkige tiende verjaardag!
+
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 import "./IT6.sol";
@@ -19,7 +22,7 @@ contract TerraSix is IT6, Untree {
     uint256 public constant GOAL = uint256(3000000000000000000000000000000);
 
     /** Bootstrap price 1 unTree until an initial supply is minted
-     * Price in unTree/ETH, set to 0.1 ETH
+     * Price in unTree/Wei, set to 0.1 ETH
      */
     uint256 public constant BOOTSTRAP_PRICE = uint256(100000000000000000);
 
@@ -34,17 +37,17 @@ contract TerraSix is IT6, Untree {
     /* Storage */
 
     /** Uniswap contract for price point Untree/ETH */
-    IUniswap public constant uniswap;
+    IUniswap public uniswap;
 
     /** Uniswap untree exchange contract */
-    address public constant untreeExchange;
+    address public untreeExchange;
 
     /** Address of reforestationDAO
      * DAO solely dedicated to funding projects for
      * reforestation, preservation and monitoring of forests
      * all over the world.
      */
-    address public reforestationDAO;
+    address payable public reforestationDAO;
 
     /** Tree balances, non-transferable */
     mapping(address => uint256) public treeBalances;
@@ -54,6 +57,9 @@ contract TerraSix is IT6, Untree {
 
     /** Total trees planted */
     uint256 public totalTreesPlanted;
+
+    /** Total hero status */
+    uint256 public totalHeroStatus;
 
     /* Special functions */
 
@@ -68,11 +74,11 @@ contract TerraSix is IT6, Untree {
             "No data can be passed.");
         // it's a donation, just transfer it onwards
         // to the reforestationDAO
-        reforestationDAO.send(msg.value);
+        reforestationDAO.transfer(msg.value);
     }
 
     constructor(
-        address _reforestationDAO,
+        address payable _reforestationDAO,
         IUniswap _uniswap,
         address _untreeExchange
     )
@@ -83,7 +89,6 @@ contract TerraSix is IT6, Untree {
         uniswap = _uniswap;
         untreeExchange = _untreeExchange;
     }
-
 
     function plant()
         external
@@ -101,6 +106,7 @@ contract TerraSix is IT6, Untree {
 
         // note: this is probably all sorts-of-wrong, but it's 3am, before the
         // hackathon deadline
+        // mint trees and untrees in equal amount
         uint256 trees = msg.value * price / uint256(10**18);
 
         totalTreesPlanted = totalTreesPlanted.add(trees);
@@ -111,31 +117,48 @@ contract TerraSix is IT6, Untree {
             // TODO; quarterly account for tree balances
         } else {
             // issue unTrees and Trees to user
-            uint256 untrees = trees.mul( uint256(1).sub( totalTreesPlanted.div(GOAL) ) ));
+            uint256 untrees = trees.mul( uint256(1).sub( totalTreesPlanted.div(GOAL) ) );
             issueUntrees(msg.sender, untrees);
             treeBalances[address(this)] = (treeBalances[msg.sender].add(trees)).sub(untrees);
         }
 
         // on planting all value is sent to reforestationDAO
-        reforestationDAO.send(msg.value);
+        reforestationDAO.transfer(msg.value);
     }
 
     function accountForExternalities
     (
-        uint256 _untree
     )
         external
         payable
     {
-        require(_untree > 10**9,
+        uint256 price;
+        if (totalTreesPlanted < BOOTSTRAP_THRESHOLD) {
+            price = BOOTSTRAP_PRICE;
+        } else {
+            price = uniswap.getPrice(untreeExchange);
+        }
+        require(msg.value > 100000,
+            "Too small Wei values disallowed to avoid rounding errors.");
+       
+        uint256 untrees = msg.value * price / uint256(10**18);
+
+        require(untrees > 10**9,
             "Minimum amount of untree required.");
 
-        burnUntree(msg.sender, _untree);
+        burnUntree(msg.sender, untrees);
 
         uint256 deltaTrees = totalTreesPlanted.sub(totalSupply());
 
         // HERO status is a quadratic bonding curve in deltaTrees;
         // because paying off your externalities today, beats paying them off tomorrow.
-        uint256 hero = _untree.mul(deltaTrees.mul(deltaTrees));
+        uint256 hero = untrees.div(deltaTrees.mul(deltaTrees));
+
+        totalHeroStatus = totalHeroStatus.add(hero);
+        heroStatuses[msg.sender] = heroStatuses[msg.sender].add(hero);
+
+        // TODO; hold off (100 - FLOW)/100 for Tree payouts
+
+        reforestationDAO.transfer(msg.value);
     }
 }

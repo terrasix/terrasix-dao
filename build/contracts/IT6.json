@@ -1,0 +1,110 @@
+{
+  "contractName": "IT6",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/ben/terrasix/terrasix-dao/contracts/terrasix/IT6.sol\":\"IT6\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ben/terrasix/terrasix-dao/contracts/terrasix/IT6.sol\":{\"keccak256\":\"0xed8081b8fc050faaf69ce456de33b4cb019ccdaad07135d4531d46336cbee9d2\",\"urls\":[\"bzzr://621e1a2e32e36a557283e57e99bbac97062096358d9a69206ddf14a2b27e0b3d\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058204ffe9c8f03926a196ad30682d6c588d13d88792d93603984dddaf4701d77517f0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058204ffe9c8f03926a196ad30682d6c588d13d88792d93603984dddaf4701d77517f0029",
+  "sourceMap": "33:22:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:22:3;;;;;;;",
+  "deployedSourceMap": "33:22:3:-;;;;;",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\ninterface IT6 {\n    \n}",
+  "sourcePath": "/Users/ben/terrasix/terrasix-dao/contracts/terrasix/IT6.sol",
+  "ast": {
+    "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/terrasix/IT6.sol",
+    "exportedSymbols": {
+      "IT6": [
+        525
+      ]
+    },
+    "id": 526,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 524,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 525,
+        "linearizedBaseContracts": [
+          525
+        ],
+        "name": "IT6",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 526,
+        "src": "33:22:3"
+      }
+    ],
+    "src": "0:55:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/ben/terrasix/terrasix-dao/contracts/terrasix/IT6.sol",
+    "exportedSymbols": {
+      "IT6": [
+        525
+      ]
+    },
+    "id": 526,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 524,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 525,
+        "linearizedBaseContracts": [
+          525
+        ],
+        "name": "IT6",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 526,
+        "src": "33:22:3"
+      }
+    ],
+    "src": "0:55:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.13",
+  "updatedAt": "2019-08-25T03:30:30.323Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
