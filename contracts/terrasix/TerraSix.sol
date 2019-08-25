@@ -31,7 +31,10 @@ contract TerraSix is IT6, Untree {
     /* Storage */
 
     /** Uniswap contract for price point Untree/ETH */
-    IUniswap public uniswap;
+    IUniswap public constant uniswap;
+
+    /** Uniswap untree exchange contract */
+    address public constant untreeExchange;
 
     /** Address of reforestationDAO
      * DAO solely dedicated to funding projects for
@@ -63,11 +66,16 @@ contract TerraSix is IT6, Untree {
     }
 
     constructor(
-
+        address _reforestationDAO,
+        IUniswap _uniswap,
+        address _untreeExchange
     )
         public
     {
-
+        // TODO: write requirements, addresses not null.
+        reforestationDAO = _reforestationDAO;
+        uniswap = _uniswap;
+        untreeExchange = _untreeExchange;
     }
 
 
@@ -75,6 +83,31 @@ contract TerraSix is IT6, Untree {
         external
         payable
     {
+        uint256 price;
+        if (totalTreesPlanted < BOOTSTRAP_THRESHOLD) {
+            price = BOOTSTRAP_PRICE;
+        } else {
+            price = uniswap.getPrice(untreeExchange);
+        }
 
+        require(msg.value > 100000,
+            "Too small Wei values disallowed to avoid rounding errors.");
+
+        // note: this is probably all sorts-of-wrong, but it's 3am, before the
+        // hackathon deadline
+        uint256 trees = msg.value * price / uint256(10**18);
+
+        totalTreesPlanted = totalTreesPlanted.add(trees);
+
+        if (totalTreesPlanted >= GOAL) {
+            // give user all trees
+            treeBalances[msg.sender] = treeBalances[msg.sender].add(trees);
+            // TODO; quarterly account for tree balances
+        } else {
+            // issue unTrees and Trees to user
+            uint256 untrees = trees * (1 - totalTreesPlanted / GOAL);
+            issueUntrees(msg.sender, untrees);
+            treeBalances[address(this)] = (treeBalances[msg.sender].add(trees)).sub(untrees);
+        }
     }
 }
