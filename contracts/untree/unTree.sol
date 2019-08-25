@@ -22,8 +22,13 @@ contract Untree is ERC20 {
     /** Issue unTrees as debt for future trees */
     function issueUntrees(address _account, uint256 _amount)
         internal
-        onlyTerrasix
     {
         _mint(_account, _amount);
+    }
+
+    function burnUntree(address _account, uint256 _amount)
+        internal
+    {
+        _burn(_account, _amount);
     }
 }

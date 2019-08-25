@@ -28,6 +28,9 @@ contract TerraSix is IT6, Untree {
      */
     uint256 public constant BOOTSTRAP_THRESHOLD = uint256(1000000);
 
+    /** Flow minimally 98% onwards to reforestation DAO */
+    uint256 public constant FLOW = uint256(98);
+
     /* Storage */
 
     /** Uniswap contract for price point Untree/ETH */
@@ -108,11 +111,31 @@ contract TerraSix is IT6, Untree {
             // TODO; quarterly account for tree balances
         } else {
             // issue unTrees and Trees to user
-            uint256 untrees = trees * (1 - totalTreesPlanted / GOAL);
+            uint256 untrees = trees.mul( uint256(1).sub( totalTreesPlanted.div(GOAL) ) ));
             issueUntrees(msg.sender, untrees);
             treeBalances[address(this)] = (treeBalances[msg.sender].add(trees)).sub(untrees);
         }
+
+        // on planting all value is sent to reforestationDAO
+        reforestationDAO.send(msg.value);
     }
 
-    function 
+    function accountForExternalities
+    (
+        uint256 _untree
+    )
+        external
+        payable
+    {
+        require(_untree > 10**9,
+            "Minimum amount of untree required.");
+
+        burnUntree(msg.sender, _untree);
+
+        uint256 deltaTrees = totalTreesPlanted.sub(totalSupply());
+
+        // HERO status is a quadratic bonding curve in deltaTrees;
+        // because paying off your externalities today, beats paying them off tomorrow.
+        uint256 hero = _untree.mul(deltaTrees.mul(deltaTrees));
+    }
 }
